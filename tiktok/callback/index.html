@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TikTok Authorization</title>
+  <style>
+    body { font-family: -apple-system, sans-serif; max-width: 600px; margin: 80px auto; padding: 20px; text-align: center; background: #FFF8F0; color: #1C1C1E; }
+    h1 { color: #FF9500; }
+    .code-box { background: #f4f4f4; border: 2px solid #FF9500; border-radius: 8px; padding: 20px; margin: 20px 0; font-family: monospace; font-size: 14px; word-break: break-all; user-select: all; }
+    .error { color: #c00; }
+    button { background: #FF9500; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-size: 16px; cursor: pointer; }
+    button:hover { background: #e08500; }
+    .note { color: #8E8E93; font-size: 14px; margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <h1>TikTok Authorization</h1>
+  <div id="result"></div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+    const error = params.get('error');
+    const el = document.getElementById('result');
+
+    if (code) {
+      el.innerHTML = `
+        <p>✅ Authorization successful! Copy the code below and paste it in the terminal:</p>
+        <div class="code-box" id="code">${code}</div>
+        <button onclick="navigator.clipboard.writeText('${code}');this.textContent='Copied!'">Copy Code</button>
+        <p class="note">You can close this tab after pasting the code.</p>
+      `;
+    } else if (error) {
+      el.innerHTML = `<p class="error">❌ Authorization failed: ${error}</p><p>${params.get('error_description') || ''}</p>`;
+    } else {
+      el.innerHTML = '<p class="error">❌ No authorization code received.</p>';
+    }
+  </script>
+</body>
+</html>
