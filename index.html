@@ -355,6 +355,94 @@
       background: rgba(201,151,59,0.1);
     }
 
+    /* ─── Channels ─── */
+    .channels {
+      text-align: center;
+      padding: 60px 0 40px;
+    }
+
+    .channels-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .channels h2 {
+      font-family: var(--serif);
+      font-size: clamp(24px, 3.5vw, 34px);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .channels > p {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto 36px;
+    }
+
+    .channel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .channel-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--bg-card);
+      border: 1px solid rgba(201,151,59,0.1);
+      border-radius: 12px;
+      padding: 16px 20px;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.3s, transform 0.2s;
+    }
+
+    .channel-link:hover {
+      border-color: rgba(201,151,59,0.35);
+      transform: translateY(-2px);
+    }
+
+    .channel-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .channel-icon.yt { background: #FF0000; }
+    .channel-icon.ig { background: linear-gradient(135deg, #F58529, #DD2A7B, #8134AF); }
+    .channel-icon.tt { background: #000; border: 1px solid rgba(255,255,255,0.15); }
+    .channel-icon.fb { background: #1877F2; }
+
+    .channel-info {
+      text-align: left;
+    }
+
+    .channel-info .channel-name {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .channel-info .channel-handle {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
     /* ─── Footer ─── */
     footer {
       border-top: 1px solid rgba(201,151,59,0.1);
@@ -423,6 +511,7 @@
       <div class="nav-links">
         <a href="#mission">Mission</a>
         <a href="#apps">Apps</a>
+        <a href="#channels">Channels</a>
         <a href="mailto:admin@fifth-elementlabs.com">Contact</a>
       </div>
     </nav>
@@ -491,6 +580,54 @@
       <div style="margin-top: 32px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
         <a href="#" class="cta-btn cta-btn-outline">Coming Soon — App Store</a>
         <a href="#" class="cta-btn cta-btn-outline">Coming Soon — Google Play</a>
+      </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="divider"><span>✦</span></div>
+
+    <!-- Channels -->
+    <section class="channels" id="channels">
+      <p class="channels-label">Watch &amp; Follow</p>
+      <h2>Find Us Everywhere</h2>
+      <p>Daily Bhagavad Gita wisdom — short videos, deep dives, and community across every platform.</p>
+
+      <div class="channel-grid">
+        <a href="https://www.youtube.com/@geetashlokawisdom" target="_blank" rel="noopener" class="channel-link">
+          <div class="channel-icon yt">&#9654;</div>
+          <div class="channel-info">
+            <div class="channel-name">YouTube (English)</div>
+            <div class="channel-handle">@geetashlokawisdom</div>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/@geetashlokahindi" target="_blank" rel="noopener" class="channel-link">
+          <div class="channel-icon yt">&#9654;</div>
+          <div class="channel-info">
+            <div class="channel-name">YouTube (हिन्दी)</div>
+            <div class="channel-handle">@geetashlokahindi</div>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/wisdomgeetashloka" target="_blank" rel="noopener" class="channel-link">
+          <div class="channel-icon ig">&#9679;</div>
+          <div class="channel-info">
+            <div class="channel-name">Instagram</div>
+            <div class="channel-handle">@wisdomgeetashloka</div>
+          </div>
+        </a>
+        <a href="https://www.tiktok.com/@geetashlokawisdom" target="_blank" rel="noopener" class="channel-link">
+          <div class="channel-icon tt">&#9834;</div>
+          <div class="channel-info">
+            <div class="channel-name">TikTok</div>
+            <div class="channel-handle">@geetashlokawisdom</div>
+          </div>
+        </a>
+        <a href="https://facebook.com/geetashloka" target="_blank" rel="noopener" class="channel-link">
+          <div class="channel-icon fb">f</div>
+          <div class="channel-info">
+            <div class="channel-name">Facebook</div>
+            <div class="channel-handle">Geeta Shloka</div>
+          </div>
+        </a>
       </div>
     </section>
 
